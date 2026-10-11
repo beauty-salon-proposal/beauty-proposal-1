@@ -36,6 +36,9 @@ header{position:sticky;top:10px;z-index:20;margin:10px auto 0;width:min(1100px,9
 nav a{margin-left:18px;text-decoration:none;color:var(--ink);font-size:.82rem}nav a:hover{color:var(--lavd)}
 .btn{display:inline-block;padding:13px 28px;border-radius:40px;background:linear-gradient(120deg,var(--lavd),var(--lavd2));color:#fff;text-decoration:none;font-size:.85rem;letter-spacing:.06em;transition:.3s;box-shadow:0 10px 30px -10px var(--lavd)}
 .btn:hover{transform:translateY(-3px)}.btn.alt{background:none;color:var(--saged);border:1px solid var(--saged);box-shadow:none;margin-left:8px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.hero-btns .btn{margin-left:0}
+@media(max-width:540px){.hero-btns{flex-direction:column;align-items:stretch;gap:10px}.hero-btns .btn{text-align:center;width:100%;display:block;margin-left:0}}
 .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;min-height:84vh}
 .hero h1{font-size:clamp(2.7rem,6.2vw,4.7rem);margin:10px 0 18px}.hero h1 em{color:var(--lavd);font-style:italic}
 .hero p{color:var(--mute);max-width:470px;margin-bottom:28px}
@@ -91,7 +94,28 @@ header{position:sticky;top:0;width:100%;margin:0;border-radius:0;border-width:0 
 .cta{margin:20px auto 60px;width:min(1100px,90%);padding:46px 24px;text-align:center;background:linear-gradient(135deg,color-mix(in srgb,var(--lav) 38%,transparent),color-mix(in srgb,var(--sage) 38%,transparent))}.cta h2{margin-bottom:8px}.cta p{color:var(--mute);margin-bottom:20px}
 .link{color:var(--lavd);text-decoration:none;font-size:.9rem}.link:hover{text-decoration:underline}
 .pic img.px{height:114%}.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:26px 0}.info a{padding:22px;text-decoration:none;color:var(--ink);display:block}.info b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--lavd)}.info span{color:var(--mute);font-size:.88rem}
-.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:30px 6%;border-top:1px solid var(--line);color:var(--mute);font-size:.82rem}.foot a{color:var(--mute);margin-right:14px;text-decoration:none}
+.site-foot{border-top:1px solid var(--line);background:color-mix(in srgb,var(--card) 60%,var(--bg));padding:56px 6% 32px;color:var(--mute);margin-top:40px;text-align:left}
+.foot-inner{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1.2fr 1fr;gap:40px}
+.foot-col h4{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--lavd);font-weight:600;margin-bottom:14px}
+.foot-brand p{margin:12px 0 16px;font-size:.88rem;line-height:1.6;max-width:340px}
+.foot-social a{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:20px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-decoration:none;font-size:.82rem;transition:.25s}
+.foot-social a:hover{border-color:var(--lavd);color:var(--lavd)}
+.foot-contact{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.foot-contact li{display:flex;align-items:flex-start;gap:10px;font-size:.85rem}
+.foot-icon{font-size:1.05rem;line-height:1.2;flex:none}
+.foot-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--saged);font-weight:500}
+.foot-contact a{color:var(--ink);text-decoration:none;transition:.2s}
+.foot-contact a:hover{color:var(--lavd);text-decoration:underline}
+.foot-contact span{color:var(--mute)}
+.foot-links{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.foot-links a{color:var(--mute);text-decoration:none;font-size:.85rem;transition:.2s}
+.foot-links a:hover{color:var(--lavd);padding-left:4px}
+.foot-btm{max-width:1150px;margin:36px auto 0;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:.8rem}
+.foot-btm-links{display:flex;gap:16px;flex-wrap:wrap}
+.foot-btm-links a{color:var(--mute);text-decoration:none;transition:.2s}
+.foot-btm-links a:hover{color:var(--lavd)}
+@media(max-width:840px){.foot-inner{grid-template-columns:1fr;gap:28px}.site-foot{padding:42px 6% 28px}.foot-contact li{align-items:center}.foot-social{display:flex;flex-wrap:wrap;gap:8px}}
+@media(max-width:540px){.foot-btm{flex-direction:column;text-align:center;gap:12px}.foot-btm-links{justify-content:center}}
 @media(max-width:800px){nav a,nav .lang{display:none}.ham{display:block}.stats{grid-template-columns:1fr 1fr}.ph{padding-top:40px}}
 
 :root[data-theme="rose"]{--bg:#fff8f9;--ink:#35212a;--mute:#7d6068;--lav:#f3b8c6;--lavd:#b5476a;--lavd2:#d9708f;--sage:#f6d5a8;--saged:#a8702a;--line:rgba(181,71,106,.16)}
@@ -115,7 +139,7 @@ header{position:sticky;top:0;width:100%;margin:0;border-radius:0;border-width:0 
 <section class="hero"><div><div class="eyebrow rv-h">Beauty salon &amp; spa · Vadavalli, Coimbatore</div>
 <h1 class="rv-h" data-ta="மணப்பெண் அலங்காரம், ஆரோக்கிய சருமம், <em>அழகான</em> கூந்தல்">Bridal glow, healthy skin, <em>beautiful</em> hair</h1>
 <p class="rv-h" data-ta="வடவள்ளியில் மணப்பெண் மேக்கப், ஹேர் ஸ்டைலிங், ஃபேஷியல். ஒரே மெசேஜில் முன்பதிவு செய்யுங்கள்.">Bridal makeup, hairstyling and facials in a friendly salon in Vadavalli. Book in one message.</p>
-<div class="rv-h"><a class="btn" data-ta="வாட்ஸ்அப்பில் முன்பதிவு" href="https://wa.me/919842023382?text=Hi%20Kalai,%20I%27d%20like%20to%20book%20an%20appointment" target="_blank" rel="noopener">Book on WhatsApp</a><a class="btn alt" href="tel:+919842023382">Call 98420 23382</a></div></div>
+<div class="rv-h hero-btns"><a class="btn" data-ta="வாட்ஸ்அப்பில் முன்பதிவு" href="https://wa.me/919842023382?text=Hi%20Kalai,%20I%27d%20like%20to%20book%20an%20appointment" target="_blank" rel="noopener">Book on WhatsApp</a><a class="btn alt" href="tel:+919842023382">Call 98420 23382</a></div></div>
 <div class="blob"><img class="px" data-i="arch" alt="Kalai at a floral angel-wing backdrop"><div class="tag glass">📍 Vadavalli, Coimbatore</div></div></section>
 <div class="mq"><div>Bridal Makeup ✦ Hair Styling ✦ Facials ✦ Ear Piercing ✦ Beautician Course ✦ Membership ✦ Bridal Makeup ✦ Hair Styling ✦ Facials ✦ Ear Piercing ✦ Beautician Course ✦ Membership ✦ </div></div>
 <section><div class="eyebrow rv">What we do</div><h2 class="rv" data-ta="எங்கள் சேவைகள்">Our Services</h2><div class="grid"><div class="card glass"><div class="ic">👰</div><h3 data-ta="மணப்பெண் மேக்கப்">Bridal Makeup</h3><p>Bridal looks with matching hairstyling for your big day.</p></div><div class="card glass"><div class="ic">💇‍♀️</div><h3 data-ta="ஹேர் ஸ்டைலிங் & கட்டிங்">Hair Styling &amp; Cuts</h3><p>Cuts, braids and floral hairstyles for women and kids.</p></div><div class="card glass"><div class="ic">✨</div><h3 data-ta="ஃபேஷியல் & சரும பராமரிப்பு">Facials &amp; Skin Care</h3><p>Facials that clean, hydrate and refresh your skin.</p></div><div class="card glass"><div class="ic">💎</div><h3 data-ta="காது குத்துதல்">Ear Piercing</h3><p>Careful, quick ear piercing in a clean salon.</p></div></div><p style="margin-top:18px" class="rv"><a class="link" href="#/services">See all services and prices →</a></p></section>
@@ -156,7 +180,76 @@ header{position:sticky;top:0;width:100%;margin:0;border-radius:0;border-width:0 
 <section><div class="split"><div class="form glass rv" data-ctx="contact"><input placeholder="Your name"><select><option selected>Bridal makeup</option><option>Hair styling & cuts</option><option>Facial & skin care</option><option>Ear piercing</option><option>Beautician course</option><option>Membership card</option><option>Jewellery</option></select><input type="date"><textarea rows="3" placeholder="Anything else? (optional)"></textarea><button class="btn go" type="button">Send on WhatsApp</button></div><div class="pic mk"><img class="px" data-i="shop" alt="Salon front poster"></div></div></section>
 <section><div class="eyebrow rv">Good to know</div><h2 class="rv">Questions</h2><div class="faq"><details class="glass rv"><summary>Where is the salon?</summary><p>Kalai's Beauty Salon & Spa is in Vadavalli, Coimbatore.</p></details><details class="glass rv"><summary>How do I book an appointment?</summary><p>Message us on WhatsApp or call 98420 23382 and we will confirm your slot.</p></details><details class="glass rv"><summary>What does the beautician course cover?</summary><p>Skincare and facials, hair care and styling, makeup, threading and waxing, manicure and pedicure, and a basic bridal makeover over 10 days.</p></details></div></section></main>
 
-<div class="foot"><div>© 2026 Kalai's Beauty Salon &amp; Spa · Vadavalli, Coimbatore</div><div><a href="#/services">Services</a><a href="#/bridal">Bridal</a><a href="#/course">Course</a><a href="#/gallery">Gallery</a><a href="#/contact">Contact</a></div></div>
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-col foot-brand">
+      <div class="logo"><a href="#/">Kalai's <i>Beauty</i> Salon &amp; Spa</a></div>
+      <p data-ta="வடவள்ளியில் மணப்பெண் அலங்காரம், ஹேர் ஸ்டைலிங், ஃபேஷியல் மற்றும் 10 நாள் பியூட்டிஷியன் பயிற்சி.">Bridal makeup, hairstyling, facials, ear piercing &amp; 10-day beautician course in Vadavalli, Coimbatore.</p>
+      <div class="foot-social">
+        <a href="https://instagram.com/kalai_makeupartistry" target="_blank" rel="noopener" aria-label="Instagram">
+          <span>📸</span> @kalai_makeupartistry
+        </a>
+      </div>
+    </div>
+
+    <div class="foot-col">
+      <h4 data-ta="தொடர்பு & முகவரி">Contact &amp; Location</h4>
+      <ul class="foot-contact">
+        <li>
+          <span class="foot-icon">📞</span>
+          <div>
+            <div class="foot-label" data-ta="தொலைபேசி">Phone / Call</div>
+            <a href="tel:+919842023382">+91 98420 23382</a>
+          </div>
+        </li>
+        <li>
+          <span class="foot-icon">💬</span>
+          <div>
+            <div class="foot-label">WhatsApp</div>
+            <a href="https://wa.me/919842023382?text=Hi%20Kalai,%20I%27d%20like%20to%20book%20an%20appointment" target="_blank" rel="noopener" data-ta="வாட்ஸ்அப் அரட்டை">Chat on WhatsApp (98420 23382)</a>
+          </div>
+        </li>
+        <li>
+          <span class="foot-icon">📍</span>
+          <div>
+            <div class="foot-label" data-ta="முகவரி">Location</div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Kalai%27s+Beauty+Salon+and+Spa+Vadavalli+Coimbatore" target="_blank" rel="noopener" data-ta="வடவள்ளி, கோயம்புத்தூர்">Vadavalli, Coimbatore, Tamil Nadu</a>
+          </div>
+        </li>
+        <li>
+          <span class="foot-icon">🕒</span>
+          <div>
+            <div class="foot-label" data-ta="நேரம்">Hours</div>
+            <span data-ta="திங்கள் - ஞாயிறு · முன்பதிவு செய்து வரவும்">Mon – Sun · By Appointment</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <h4 data-ta="விரைவு இணைப்புகள்">Quick Links</h4>
+      <ul class="foot-links">
+        <li><a href="#/" data-ta="முகப்பு">Home</a></li>
+        <li><a href="#/services" data-ta="சேவைகள் & விலை">Services &amp; Pricing</a></li>
+        <li><a href="#/bridal" data-ta="மணப்பெண் அலங்காரம்">Bridal Makeup</a></li>
+        <li><a href="#/course" data-ta="10 நாள் பயிற்சி">10-Day Beautician Course</a></li>
+        <li><a href="#/gallery" data-ta="படங்கள்">Gallery</a></li>
+        <li><a href="#/about" data-ta="பற்றி">About Kalai</a></li>
+        <li><a href="#/contact" data-ta="முன்பதிவு">Book Appointment</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot-btm">
+    <div data-ta="© 2026 கலைஸ் பியூட்டி சலூன் & ஸ்பா · வடவள்ளி, கோயம்புத்தூர்.">© 2026 Kalai's Beauty Salon &amp; Spa · Vadavalli, Coimbatore. All rights reserved.</div>
+    <div class="foot-btm-links">
+      <a href="tel:+919842023382" data-ta="அழைக்க">Call</a>
+      <a href="https://wa.me/919842023382" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/kalai_makeupartistry" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Kalai%27s+Beauty+Salon+and+Spa+Vadavalli+Coimbatore" target="_blank" rel="noopener" data-ta="வழித்தடம்">Directions</a>
+    </div>
+  </div>
+</footer>
 <a class="wa" href="https://wa.me/919842023382" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
 <a class="top glass" id="top" href="#" aria-label="Back to top">↑</a>
 <div class="mb"><a href="tel:+919842023382">📞 Call</a><a href="https://wa.me/919842023382" target="_blank" rel="noopener">💬 WhatsApp</a></div>
